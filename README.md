@@ -25,7 +25,7 @@ or visit the Deployed website at:
 
 https://rocky-hamlet-80217.herokuapp.com/
 
-
+<img src=./Develop/images/express.jpg alt="Website screenshot">
 
 ## Usage
 Whenver you need to have notes available or need to add appointments and reminders instead of writing them on paper add them to the notes on this website!
