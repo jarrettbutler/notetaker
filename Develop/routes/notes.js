@@ -1,16 +1,16 @@
-const notes = require('express').Router();
+const router = require('express').Router();
 const { v4: uuidv4 } = require('uuid');
 const { readAndAppend, readFromFile } = require('../helpers/fsUtils');
+const path = require('path');
 
 // GET Route for retrieving all the feedback
-notes.get('/', (req, res) =>
-  readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
+router.get('/', (req, res) =>
+res.sendFile(path.join(__dirname, "../db/db.json"))
 );
 
-
 // POST Route for a new note
-notes.post('/', (req, res) => {
-  const { noteTitle, noteText} = req.body;
+router.post('/', (req, res) => {
+  const {noteTitle, noteText} = req.body;
 
   if (req.body) {
     const newNote = {
@@ -30,4 +30,4 @@ notes.post('/', (req, res) => {
   }
 });
 
-module.exports = notes;
+module.exports = router;
