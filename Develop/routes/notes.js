@@ -10,15 +10,15 @@ res.sendFile(path.join(__dirname, "../db/db.json"))
 
 // POST Route for a new note
 router.post('/', (req, res) => {
-  const {noteTitle, noteText} = req.body;
+  const {title, text} = req.body;
 
   if (req.body) {
     const newNote = {
-      noteTitle,
-      noteText,
+      title,
+      text,
       note_id: uuidv4(),
     };
-    readAndAppend(newNote, './db/db.json');
+    readAndAppend(newNote, './Develop/db/db.json');
     const response = {
       status: 'success',
       body: newNote,
