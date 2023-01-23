@@ -3,7 +3,8 @@ const path = require('path');
 const api = require('./Develop/routes/index');
 
 //Creates a port or defaults to local 3000
-const PORT = process.env.PORT || 3001;
+const host = 'localhost';
+const port = 3000;
 const app = express();
 
 //middleware for parsing JSON and urlencoded form data
@@ -28,6 +29,6 @@ app.get('*', (req, res) =>
 );
 
 //Making sure the app is listening on an certain port
-app.listen(PORT, () =>
-  console.log(`App listening at http://localhost:${PORT} 🚀`)
-);
+app.listen(port, host, function() {
+  console.log("Server started.......");
+});
